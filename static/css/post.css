@@ -1,0 +1,17 @@
+@import url('./vars.css');
+
+.post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post__title {
+    color: var(--primary) ;
+    line-height: 1em;
+}
+
+.post p {
+    line-height: 1.45em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.post p img {
+    max-width: 100%;
+}

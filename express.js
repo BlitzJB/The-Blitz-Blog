@@ -23,6 +23,16 @@ app.get('/api/post/:title', cache(), (req, res) => {
     });
 })
 
+app.get('/api/all-posts', (req, res) => {
+    notion.publishedPosts().then(posts => {
+        Promise.all(posts.map(post => {
+            return post.reqPayload()
+        })).then(payloads => {
+            res.json(payloads)
+        })
+    })
+})
+
 app.get('/*', serve('index.html'));
 // Do something about this being publicly available
 // app.get('/api/clearcache/:url', clearCache(req.params.url))

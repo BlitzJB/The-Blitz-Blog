@@ -9,6 +9,10 @@
     line-height: 1.45em;
     display: flex;
     flex-direction: row;
+
+}
+
+.post p:has(img) {
     justify-content: center;
 }
 
